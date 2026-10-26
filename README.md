@@ -28,38 +28,19 @@ GitHub Pages 发布，1~2 分钟后网站更新
 
 ---
 
-## 第一次发布（只做一次）
+## 发布状态（已经配好，一般不用管）
 
-前提：GitHub 账号 `ssfkyx`。
+网站已经上线：**<https://ssfkyx.github.io>**
 
-### 1. 新建仓库
+- 仓库：<https://github.com/ssfkyx/ssfkyx.github.io>（公开）
+- Pages 构建来源：**GitHub Actions**（由 `.github/workflows/deploy.yml` 自动构建）
+- 第一次部署已完成；之后每次 push 都会自动更新网站
 
-1. 打开 <https://github.com/new>
-2. **Repository name** 填：`ssfkyx.github.io`
-   - 必须完全一致，这是 GitHub Pages「用户站」的规则，网址才是 `https://ssfkyx.github.io`
-3. 选择 **Public**（免费账号的 Pages 只能从公开仓库发布）
-4. **不要**勾选 README、.gitignore、license，保持空仓库
-5. 点 **Create repository**
+只有下面这几种情况需要手动处理：
 
-### 2. 把本地仓库推上去
-
-在 `个人网页` 文件夹里执行（或者直接叫 DSH 帮你推）：
-
-```bash
-git push -u origin main
-```
-
-首次会弹出 GitHub 登录窗口（Git Credential Manager），登录 `ssfkyx` 账号即可。
-
-### 3. 打开 GitHub Pages
-
-1. 进入仓库的 **Settings** → **Pages**
-2. **Build and deployment** → **Source** 选择 **GitHub Actions**
-   - 不需要选分支；部署由 `.github/workflows/deploy.yml` 完成
-
-### 4. 等网站上线
-
-第一次构建大约 1~3 分钟，完成后访问：<https://ssfkyx.github.io>
+- **看部署是否成功**：仓库的 **Actions** 页面里，最近一次 “Deploy to GitHub Pages” 是绿色就说明正常
+- **换仓库 / 重建仓库**：仓库名必须是 `ssfkyx.github.io`，并在 **Settings → Pages → Source** 选 **GitHub Actions**
+- **换电脑**：把仓库 `git clone` 下来，再用 Obsidian 打开文件夹即可
 
 ---
 
