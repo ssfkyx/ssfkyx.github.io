@@ -154,8 +154,10 @@ plugins:
       enableRSS: true
   - source: "@quartz-community/favicon"
     enabled: true
+  # 默认分享图用 quartz/static/og-image.png（中文显示正常）。
+  # 想让每篇笔记自动生成分享图，再把这个插件打开。
   - source: "@quartz-community/og-image"
-    enabled: true
+    enabled: false
   # 没用自己的域名时不需要 CNAME 文件；以后绑定域名再打开
   - source: "@quartz-community/cname"
     enabled: false
