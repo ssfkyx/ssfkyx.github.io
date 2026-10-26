@@ -107,7 +107,10 @@ C:\Users\skyai\Desktop\dsh\个人网页
 
 - **自动**：Obsidian Git 每 5 分钟 commit + push 一次，之后网站自动更新
 - **想立刻发布**：`Ctrl+P` 打开命令面板 → 执行 **Git: Commit-and-sync**
+- **备用方案**：双击仓库根目录的 `一键发布.bat`（如果 Obsidian Git 没反应/没启用时用）
 - 发布是否成功，可以在仓库的 **Actions** 页面看到（绿色 = 成功）
+
+> 第一次推送时，Git 会弹窗要求登录 GitHub（Git Credential Manager）。登录一次之后，之后半年内都不用再登录。
 
 ---
 
@@ -149,7 +152,7 @@ C:\Users\skyai\Desktop\dsh\个人网页
 
 ## 本地预览（可选）
 
-需要安装 [Node.js](https://nodejs.org/) 22 或更高版本。在 `个人网页` 文件夹里执行：
+需要安装 [Node.js](https://nodejs.org/) 22 或更高版本（这台电脑目前没有把 Node 装进系统环境，所以这一步可以先跳过；需要时叫 DSH 帮你预览，或者自己装好 Node 后执行）：
 
 ```bash
 npm ci
@@ -184,6 +187,7 @@ GitHub 会自动把旧链接重定向到新域名，外链一般不会失效。
 ├─ quartz/                     ← 网站生成器源码（不用改）
 ├─ .obsidian/                  ← Obsidian 设置、主题、Git 插件（已配好）
 ├─ .github/workflows/deploy.yml ← 自动部署配置
+├─ 一键发布.bat                 ← 备用的一键同步脚本
 └─ package.json                ← 依赖清单
 ```
 

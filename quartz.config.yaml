@@ -18,8 +18,9 @@ configuration:
     - templates
     - .obsidian
   theme:
-    fontOrigin: googleFonts
-    cdnCaching: true
+    # local：不请求 Google Fonts，直接使用系统字体（国内访问也不会卡）
+    fontOrigin: local
+    cdnCaching: false
     typography:
       header: Schibsted Grotesk
       body: Source Sans Pro
@@ -155,8 +156,9 @@ plugins:
     enabled: true
   - source: "@quartz-community/og-image"
     enabled: true
+  # 没用自己的域名时不需要 CNAME 文件；以后绑定域名再打开
   - source: "@quartz-community/cname"
-    enabled: true
+    enabled: false
   - source: "@quartz-community/canvas-page"
     enabled: true
   - source: "@quartz-community/content-page"
@@ -167,6 +169,9 @@ plugins:
     enabled: true
   - source: "@quartz-community/explorer"
     enabled: true
+    options:
+      title: 笔记
+      folderDefaultState: open
     layout:
       position: left
       priority: 50
@@ -199,7 +204,7 @@ plugins:
       position: beforeBody
       priority: 20
   - source: "@quartz-community/tag-list"
-    enabled: false
+    enabled: true
     layout:
       position: beforeBody
       priority: 30
@@ -266,7 +271,8 @@ plugins:
         - tags
         - aliases
       excludedProperties: []
-      hidePropertiesView: false
+      # 不在页面上展示属性面板（标题、标签等仍在后台处理）
+      hidePropertiesView: true
       delimiters: "---"
       language: yaml
     order: 5
