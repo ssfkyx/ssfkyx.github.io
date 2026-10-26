@@ -1,0 +1,16 @@
+{
+  "attachmentFolderPath": "content/attachments",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "content",
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": false,
+  "livePreview": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "showLineNumber": false,
+  "spellcheck": false,
+  "safeMode": false,
+  "promptDelete": false
+}

@@ -1,0 +1,69 @@
+@use "./variables.scss" as *;
+
+// ============================================================
+// 自定义样式：改这里可以调整站点的字体、间距、图片样式等
+// ============================================================
+
+// 中文字体回退：拉丁字符用 Quartz 配置里的字体，中文优先用系统字体，
+// 这样不依赖 Google Fonts 加载中文字库，国内访问也不会卡。
+html:root {
+  --titleFont: "Schibsted Grotesk", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --headerFont: "Schibsted Grotesk", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --bodyFont: "Source Sans Pro", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --codeFont: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+// 正文排版：中文行距、段落间距
+article {
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+
+  p {
+    margin: 1.1em 0;
+  }
+
+  h2 {
+    margin-top: 2.4rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--lightgray);
+  }
+
+  h3 {
+    margin-top: 1.8rem;
+  }
+
+  // 图片：圆角 + 细边框，粘进来的截图不会显得生硬
+  img {
+    border-radius: 10px;
+    border: 1px solid var(--lightgray);
+    max-width: 100%;
+    height: auto;
+  }
+
+  // 图片下方斜体的说明文字
+  p > img + em {
+    display: block;
+    margin-top: 0.4rem;
+    color: var(--gray);
+    font-size: 0.85rem;
+    text-align: center;
+  }
+}
+
+// 表格：窄屏可横向滚动
+.table-container {
+  overflow-x: auto;
+}
+
+// 首页大标题稍微收紧
+.page-title,
+h1 {
+  letter-spacing: 0.015em;
+}
+
+// 移动端正文大小
+@media all and ($mobile) {
+  article {
+    line-height: 1.85;
+  }
+}

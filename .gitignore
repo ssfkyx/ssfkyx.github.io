@@ -1,0 +1,33 @@
+# dependencies
+node_modules/
+.pnpm-store/
+.tools/
+
+# build output
+public/
+.quartz-cache/
+.quartz/
+prof/
+tsconfig.tsbuildinfo
+
+# Obsidian 本地状态（设置和插件配置要提交，工作区状态不用）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.trash/
+
+# private / drafts
+private/
+
+# environment
+.env
+.env.*
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# logs
+*.log
